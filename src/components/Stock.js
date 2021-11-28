@@ -8,7 +8,7 @@ const Stock = () => {
   const [stockChartXValues, setStockChartXValues] = useState([]);
   const [stockChartYValues, setStockChartYValues] = useState([]);
   const [stockTicker, setStockTicker] = useState();
-  const [stock, setStock] = useState('FB');
+  const [stock, setStock] = useState('F');
   const Plot = createPlotlyComponent(Plotly);
 
   const API_KEY = '4J02TAATISR9F7W6';
@@ -48,18 +48,25 @@ const Stock = () => {
     e.preventDefault();
     setStock(stockTicker);
   };
-  console.log('stock', stock);
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          placeholder='enter ticker symbol here'
-          type='text'
-          name='stock'
-          onChange={handleChange}
-        />
-        <button type='submit'>Change Ticker</button>
-      </form>
+    <div className='wrapper'>
+      <h1>Stock Market Tracker</h1>
+      <h3>See how your favorite stocks have been doing</h3>
+      <div className='form-wrapper'>
+        <form onSubmit={handleSubmit}>
+          <label>Ticker Symbol: </label>
+          <input
+            placeholder='enter ticker symbol here'
+            type='text'
+            name='stock'
+            onChange={handleChange}
+          />
+
+          <button type='submit'>Check Stock</button>
+        </form>
+        <h3>{stockChartXValues.length > 1 ? stock : null}</h3>
+      </div>
+
       <Plot
         data={[
           {
@@ -70,7 +77,7 @@ const Stock = () => {
             marker: { color: 'red' },
           },
         ]}
-        layout={{ width: 720, height: 440, title: { stock } }}
+        layout={{ width: 480, height: 410, title: { stock } }}
       />
     </div>
   );

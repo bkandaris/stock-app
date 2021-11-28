@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url('./assets/bull.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.wrapper > h1 {
+  color: rgb(15, 247, 45);
+  margin-bottom: 10px;
+  font-size: 2.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.wrapper > h3 {
+  color: rgb(15, 247, 45);
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.form-wrapper > form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.form-wrapper > form > label {
+  color: rgb(15, 247, 45);
+  margin: 10px 0;
+}
+
+Form > input {
+  text-align: center;
+  border: none;
+  font-size: 1.2rem;
+  margin: 10px 0;
+  height: 40px;
+}
+
+Label {
+  font-size: 1.4rem;
+}
+
+Button {
+  color: black;
+  font-weight: bold;
+  background: rgb(15, 247, 45);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+button:hover {
+  color: rgb(15, 247, 45);
+  background-color: black;
+  transition: 0.2s;
+}
+
+.hidden {
+  display: none;
 }
